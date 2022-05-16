@@ -1,0 +1,76 @@
+// Solarized colors
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+// Basic setup
+
+body {
+  background-color: $base01;
+  color: $base2;
+  font: Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.mainDiv {
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.canvasDiv {
+  width: 1000px;
+  height: 1000px;
+  background-color: $base03;
+  display: inline-block;
+}
+
+.canvasAddDiv {
+  width: 400px;
+  display: inline-block;
+  padding: 20px;
+  vertical-align: top;
+}
+
+.canvasAddInputDiv {
+  width: 100%;
+  padding-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.canvasAddInputLabel {
+  width: 40%;
+  display: inline-block;
+}
+
+.canvasAddInputInput {
+  width: 55%;
+  display: inline-block;
+}
+
+.canvasAddHeader {
+  width:90%;
+  margin-top:40px;
+  padding-bottom: 20px;
+}
+
+.canvasSubmit {
+  width: 200px;
+  background-color: $base1;
+  font-weight: bolder;
+  padding: 20px;
+}
