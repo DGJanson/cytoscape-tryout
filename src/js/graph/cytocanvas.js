@@ -1,6 +1,8 @@
-import cytoscape from 'cytoscape';
-
-export function initCytoscape (containerId) {
+export async function initCytoscape (containerId) {
+  // Use a dynamic import of cytoscape
+  // This can reduce bundle size
+  // See webpack -> code splitting guide
+  let { default: cytoscape } = await import("cytoscape")
   let cy = cytoscape({
     container: document.getElementById(containerId),
     elements: [ // list of graph elements to start with
