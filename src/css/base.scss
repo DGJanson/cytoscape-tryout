@@ -16,26 +16,34 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 // Basic setup
 
 body {
-  background-color: $base01;
-  color: $base2;
-  font: Helvetica, sans-serif;
-  font-size: 14px;
+  background-color: $base2;
+  color: $base00;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
 }
 
 .mainDiv {
-  width: 90%;
+  width: 95%;
+}
+
+.containerDiv {
   margin: 10px;
   padding: 10px;
 }
 
 .canvasDiv {
-  width: 1000px;
-  height: 1000px;
-  background-color: $base03;
+  width: 90%;
+  height: 900px;
+  margin: 10px;
+  background-color: $base3;
   display: inline-block;
+  border: 2px solid $base01;
 }
 
 .canvasAddDiv {
@@ -73,4 +81,9 @@ body {
   background-color: $base1;
   font-weight: bolder;
   padding: 20px;
+}
+
+img.icon {
+  height: 50px;
+  width: 50px;
 }
