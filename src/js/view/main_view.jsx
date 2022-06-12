@@ -4,6 +4,7 @@ import React from 'react';
 
 import { Title } from './components/headers.jsx';
 import { LoadingDiv } from './components/statecomponents.jsx';
+import { TopMenu } from './components/topmenu/topmenu.jsx';
 
 import { MainModel } from '../model/main.js';
 import { mainStates } from '../enums.js';
@@ -32,7 +33,8 @@ export class MainView extends React.Component {
         } else if (this.state["state"] == mainStates.loaded) {
             return (
                 <div>
-                    <MainTitle/>                    
+                    <MainTitle/>       
+                    <TopMenu />             
                     <CytoscapeContainer />
                 </div>            
             )

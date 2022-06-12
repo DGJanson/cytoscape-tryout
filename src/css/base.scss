@@ -46,44 +46,38 @@ body {
   border: 2px solid $base01;
 }
 
-.canvasAddDiv {
-  width: 400px;
-  display: inline-block;
-  padding: 20px;
-  vertical-align: top;
-}
-
-.canvasAddInputDiv {
-  width: 100%;
-  padding-bottom: 10px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.canvasAddInputLabel {
-  width: 40%;
-  display: inline-block;
-}
-
-.canvasAddInputInput {
-  width: 55%;
-  display: inline-block;
-}
-
-.canvasAddHeader {
-  width:90%;
-  margin-top:40px;
-  padding-bottom: 20px;
-}
-
-.canvasSubmit {
-  width: 200px;
-  background-color: $base1;
-  font-weight: bolder;
-  padding: 20px;
-}
-
 img.icon {
   height: 50px;
   width: 50px;
+}
+
+img.largeIcon {
+  height: 75px;
+  width: 75px;
+}
+
+div.marginTop {
+  margin-top: 10px;
+}
+
+div.button {
+  min-width: 200px;
+  margin-right: 50px;
+  text-align: center;
+  background-color: $violet;
+  color: $base2;
+  border-radius: 10px;
+  border: 2px solid $violet;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $cyan;
+  }
+}
+
+.margin-bottom25 {
+  margin-bottom: 25px;
 }
