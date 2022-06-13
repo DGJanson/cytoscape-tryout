@@ -4,6 +4,8 @@ import React from "react";
 
 import { openClosed } from "../../../enums";
 
+import { generateAFewTestNodes } from '../../../data/testdata.js'
+
 import bookOpenIcon from '../../../../assets/icons/bookOpen.png';
 import bookClosedIcon from '../../../../assets/icons/bookClosed.png';
 
@@ -34,6 +36,10 @@ export class TopMenu extends React.Component {
         document.addEventListener("keydown", this.handleKeyEvent);
     }
 
+    componentDidUpdate () {
+        this.props.resizeCytoscape();
+    }
+
     render () {
         if (this.state["open"] == openClosed.closed) {
             return (
@@ -44,12 +50,11 @@ export class TopMenu extends React.Component {
         } else {
             return (
                 <div className="containerDiv">
-                    <div className="margin-bottom25">
+                    <div className="margin-bottom25" onClick = {this.changeOpenClosed}>
                         <img className="icon" src={ bookOpenIcon } />        
                     </div>
                     <div>
-                        <div className="button" onClick = {this.changeOpenClosed}>Close Menu</div>
-                        <OpenTestData />
+                        <OpenTestData addElements={this.props.addElements} />
                     </div>                    
                 </div>
             )
@@ -58,9 +63,20 @@ export class TopMenu extends React.Component {
 }
 
 class OpenTestData extends React.Component {
+    constructor (props) {
+        super(props);
+
+        this.addTestData = this.addTestData.bind(this);
+    }
+
+    addTestData () {
+        let listToAdd = generateAFewTestNodes();
+        this.props.addElements(listToAdd);
+    }
+
     render () {
         return (
-            <div className="button">
+            <div className="button" onClick={ this.addTestData} >
                 Get Test Data
             </div>
         );
