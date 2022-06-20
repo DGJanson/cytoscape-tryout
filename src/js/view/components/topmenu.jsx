@@ -2,12 +2,12 @@
 
 import React from "react";
 
-import { openClosed } from "../../../enums";
+import { openClosed } from "../../enums";
 
-import { generateAFewTestNodes } from '../../../data/testdata.js'
+import { generateAFewTestNodes } from '../../data/testdata.js'
 
-import bookOpenIcon from '../../../../assets/icons/bookOpen.png';
-import bookClosedIcon from '../../../../assets/icons/bookClosed.png';
+import bookOpenIcon from '../../../assets/icons/bookOpen.png';
+import bookClosedIcon from '../../../assets/icons/bookClosed.png';
 
 export class TopMenu extends React.Component {
     constructor (props) {

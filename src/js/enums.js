@@ -5,6 +5,5 @@ export const mainStates = {
 
 export const openClosed = {
     "closed" : 0,
-    "open" : 1
-    
+    "open" : 1    
 }

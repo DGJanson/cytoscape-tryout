@@ -4,10 +4,13 @@ import React from 'react';
 
 import { Title } from './components/headers.jsx';
 import { LoadingDiv } from './components/statecomponents.jsx';
-import { TopMenu } from './components/topmenu/topmenu.jsx';
+import { TopMenu } from './components/topmenu.jsx';
+import { ProjectMenu } from './components/projectmenu.jsx';
 
 import { initCytoscape } from '../graph/cytocanvas.js';
 import { CyHelper } from '../graph/cyhelper.js';
+
+import { Project }  from '../model/projectdesc.js';
 
 import { mainStates } from '../enums.js';
 
@@ -17,8 +20,9 @@ export class MainView extends React.Component {
         this.state = {
             appState: mainStates.loading,
             cytoscapeLoaded: false,
-
         };
+
+        this.project_desc = new Project();
 
         this.addElementsToCytoscape = this.addElementsToCytoscape.bind(this);
         this.resizeCytoscape = this.resizeCytoscape.bind(this);
@@ -29,7 +33,6 @@ export class MainView extends React.Component {
         if (this.state["cytoscapeLoaded"] === false) {
             // initcytoscape returns a promise! so await it
             initCytoscape("canvasDiv").then(cyCore => {
-                console.log(cyCore);
                 this.cyHelper = new CyHelper(cyCore);        
                 this.setState({
                     appState: mainStates.loaded,
@@ -42,6 +45,7 @@ export class MainView extends React.Component {
 
     componentDidUpdate () {
         this.resizeCytoscape();
+        console.log(this.project_desc);
     }
 
     // Callbacks that downstream components can use
@@ -71,6 +75,7 @@ export class MainView extends React.Component {
                     <MainTitle/>       
                     <TopMenu addElements={this.addElementsToCytoscape} resizeCytoscape={this.resizeCytoscape} />             
                     <CytoscapeContainer />
+                    <ProjectMenu desc={this.project_desc} />
                 </div>            
             )
         }
